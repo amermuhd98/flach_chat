@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "390440132834",
+    "project_id": "flach-chat-3b81d",
+    "storage_bucket": "flach-chat-3b81d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390440132834:android:71ec6922449c0f2608bebb",
+        "android_client_info": {
+          "package_name": "com.example.chat_ux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390440132834-urda10rehbcsreame4ces0o2e1mhcfcf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYEByJu4Cz7zRlgCd7_w6r_Lq1pouTyBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390440132834-urda10rehbcsreame4ces0o2e1mhcfcf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
