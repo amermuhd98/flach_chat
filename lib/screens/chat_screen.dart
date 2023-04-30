@@ -64,7 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 icon: Icon(Icons.close),
                 onPressed: () {
                   _auth.signOut();
-                Navigator.pushNamed(context, WelcomeScreen.screenRoute);
+                  Navigator.pushNamed(context, WelcomeScreen.screenRoute);
                   // getMessages();
                 }),
           ],
@@ -131,11 +131,12 @@ class _ChatScreenState extends State<ChatScreen> {
 
 class MessageStreamBuilder extends StatelessWidget {
   const MessageStreamBuilder({super.key});
-
+// 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-        stream: _firestore.collection("messages").orderBy("time").snapshots(),
+        stream: _firestore.collection("messages").orderBy("time")  .snapshots(),
+      
         builder: (context, snapshot) {
           List<MessageLine> messageWigdets = [];
 
