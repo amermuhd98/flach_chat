@@ -208,7 +208,7 @@ class MessageLine extends StatelessWidget {
                     bottomRight: Radius.circular(30)),
             color: isMe ? Colors.blue[800] : Colors.white,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 21),
               child: Text(
                 "$text",
                 style: TextStyle(
