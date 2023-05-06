@@ -2,6 +2,7 @@ import 'package:chat_ux/constants.dart';
 import 'package:chat_ux/screens/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -17,11 +18,12 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final messageTextController = TextEditingController();
-
+  var fmb = FirebaseMessaging.instance;
   String? messageText;
   @override
   void initState() {
     super.initState();
+
     getCurrentUser();
   }
 
@@ -93,7 +95,9 @@ class _ChatScreenState extends State<ChatScreen> {
                     Expanded(
                       child: TextField(
                         controller: messageTextController,
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          messageText = value;
+                        },
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
                             vertical: 10,
@@ -131,12 +135,11 @@ class _ChatScreenState extends State<ChatScreen> {
 
 class MessageStreamBuilder extends StatelessWidget {
   const MessageStreamBuilder({super.key});
-// 
+//
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-        stream: _firestore.collection("messages").orderBy("time")  .snapshots(),
-      
+        stream: _firestore.collection("messages").orderBy("time").snapshots(),
         builder: (context, snapshot) {
           List<MessageLine> messageWigdets = [];
 

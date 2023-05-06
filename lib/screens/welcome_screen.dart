@@ -1,8 +1,11 @@
 import 'package:chat_ux/screens/login_screen.dart';
 import 'package:chat_ux/screens/registration_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String screenRoute = 'WelcomeScreen';
@@ -13,10 +16,13 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen>
     with SingleTickerProviderStateMixin {
+      
+
   late AnimationController controller;
   late Animation animation;
   @override
   void initState() {
+
     super.initState();
     controller = AnimationController(
       duration: Duration(seconds: 1),
@@ -35,6 +41,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     controller.dispose();
     super.dispose();
   }
+
+
+  
 
   @override
   Widget build(BuildContext context) {
